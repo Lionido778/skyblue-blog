@@ -1,0 +1,45 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: blog-system
+  # Database
+  datasource:
+    url: jdbc:mysql://192.168.80.10:3306/skyblue?characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: master
+  # Spring data Jpa
+  jpa:
+    show-sql: true
+    open-in-view: false
+  # redis
+  redis:
+    host: 192.168.80.10
+    port: 6379
+    password: master
+    database: 1
+  # solr
+  data:
+    redis:
+      repositories:
+        enabled: false
+    solr:
+      repositories:
+        enabled: false
+      host: http://192.168.80.10:8983/solr/blog_system_core
+# log
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    dao: debug
+    org:
+      mybatis: debug
+
+# image upload
+blog.image.store-path: /usr/app/upload
+# max-size
+blog.image.max-size: 2097152
+
+# enable swagger2
+swagger.enable: false
