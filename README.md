@@ -1,0 +1,156 @@
+## 功能说明
+
+- 门户
+  - 用户
+    - 登录
+    - 退出登录
+    - 用户注册
+    - 找回密码
+  - 文章
+    - 文章详情
+    - 获取文章列表
+    - 文章搜索
+    - 获取推荐文章
+  - 评论内容
+    - 添加评论
+    - 删除评论
+    - 获取评论列表
+  - 网站信息
+    - 获取分类列表
+    - 访问总量-每天增量
+    - 获取轮播图列表
+    - 获取网站标题
+    - 获取友情链接
+    - 获取网站SEO数据
+- 管理中心
+  - 用户
+    - 管理员帐户初始化
+    - 用户信息更新
+    - 密码重置
+    - 获取用户列表
+    - 删除用户
+    - 退出登录
+  - 文章内容
+    - 更新文章
+    - 发布文章
+    - 删除文章
+    - 获取文章列表
+    - 预览文章
+    - 文章置顶
+    - 文章搜索
+  - 轮播图设置
+    - 是否开启轮播图
+    - 添加轮播图内容
+    - 删除轮播图内容
+    - 获取轮播图
+    - 获取轮播图列表
+  - 文章分类
+    - 添加/修改文章分类
+    - 删除文章分类
+    - 获取分类列表
+  - 友情链接
+    - 添加/修改友情链接
+    - 删除友情链接
+    - 获取友情链接
+  - 评论内容
+    - 评论置顶
+    - 删除评论
+    - 获取评论列表
+  - 设置
+    - seo信息
+      - 修改网站SEO信息
+      - 获取网站SEO信息
+    - 网站标题
+      - 获取网站标题
+      - 设置网站标题
+
+## 数据库数据表字段设计
+
+- 用户表sky_user
+  - id-ID
+  - user_name-用户名
+  - password-密码
+  - roles-角色
+  - avatar-头像
+  - email-邮箱
+  - sign-签名
+  - state-状态
+  - reg_ip-注册ip
+  - login_ip-登录ip
+  - create_time-创建时间
+  - update_time-更新时间
+- 文章表sky_article
+  - id-ID
+  - title-标题
+  - user_id-用户ID
+  - category_id分类ID
+  - content-内容
+  - type-类型（0表示富文本，1表示markdown）
+  - state-状态（0表示已发布，1表示草稿，2表示删除）
+  - summary-摘要
+  - labels-标签
+  - view_count-浏览量
+  - create_time-发布时间
+  - update_time-更新时间
+- 文章分类表sky_categories
+  - id-ID
+  - name-分类名称
+  - pinyin-名称拼音
+  - description-分类描述
+  - order-顺序
+  - status-状态
+  - create_time-创建时间
+  - update_time-更新时间
+- 评论表sky_comment
+  - id-ID
+  - parent_content-被评论内容-子评论
+  - article_id-文章ID
+  - content-评论内容
+  - user_id-评论人用户ID
+  - user_avatar-评论人头像
+  - user_name-评论人名称
+  - state-状态（0表示删除，1表示正常）
+  - create_time-创建时间
+  - update_time-更新时间
+- 图片表sky_images
+  - id-ID
+  - user_id-用户ID
+  - url-路径
+  - state-状态（0表示删除，1表正常）
+  - create_time-创建时间
+  - update_time-更新时间
+- 标签统计表sky_labels
+  - id-ID
+  - name-标签名称
+  - count-数量
+  - create_time创建时间
+  - update_time更新时间
+- 轮播图表sky_looper
+  - id-ID
+  - title-轮播图标题
+  - order-顺序
+  - state-状态
+  - target_url-目标链接
+  - image_url-图片路径
+  - create_time-创建时间
+  - update_time-更新时间
+- 每天的访问量sky_daily_view_count
+  - id-ID
+  - view_count-浏览量
+  - create_time-创建时间
+  - update_time-更新时间
+- 友情链接表sky_friends
+  - id-ID
+  - name-友情链接名称
+  - logo-友情链接logo
+  - url-友情链接
+  - order-顺序
+  - state-友情链接状态
+  - create_time创建时间
+  - update_time更新时间
+- 网站信息表sky_settings
+  - id-ID
+  - key-键
+  - value-值
+  - create_time-创建时间
+  - update_time-更新时间
