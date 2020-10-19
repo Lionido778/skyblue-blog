@@ -12,7 +12,7 @@ import java.util.Map;
 public class IpToAddrUtil {
 
     //使用腾讯的接口通过ip拿到城市信息
-    private static final String KEY = "JO5BZ-WYS3K-F6CJI-AAFAR-W327Q-3LFLY";
+    private static final String KEY = "**Aaafafff2323423保密423434";
 
     public static String getCityInfo(String ip) {
         String s = sendGet(ip, KEY);

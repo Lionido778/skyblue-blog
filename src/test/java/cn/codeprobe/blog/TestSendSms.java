@@ -21,7 +21,7 @@ public class TestSendSms {
     @Test
     public static void main(String[] args) {
         //连接阿里云
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4GGEAreobT25KJeSDgpN", "VOhMMQZZ3rWJBmJaxoSWVuBNCGaYeK");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "L4342342342保密234N", "VOhMMQZZ3rWJBaasdafaf保密K");
         IAcsClient client = new DefaultAcsClient(profile);
 
         //构建请求
